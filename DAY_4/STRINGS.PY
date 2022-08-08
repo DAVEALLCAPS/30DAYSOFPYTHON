@@ -1,13 +1,43 @@
-"""## 💻 Exercises - Day 4
+# 💻 Exercises - Day 4
 
-1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
-2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
-3. Declare a variable named company and assign it to an initial value "Coding For All".
-4. Print the variable company using _print()_.
-5. Print the length of the company string using _len()_ method and _print()_.
-6. Change all the characters to uppercase letters using _upper()_ method.
-7. Change all the characters to lowercase letters using _lower()_ method.
-8. Use capitalize(), title(), swapcase() methods to format the value of the string _Coding For All_.
+# 1. Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
+spc = ' '
+w1 = 'Thirty'
+w2 = 'Days'
+w3 = 'Of'
+w4 = 'Python'
+singleString = w1 + spc + w2 + spc + w3 + spc + w4
+print(singleString)
+
+# 2. Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
+cfa = 'Coding' + spc + 'For' + spc + 'All'
+print(cfa)
+
+# 3. Declare a variable named company and assign it to an initial value "Coding For All".
+
+company = "Coding For All"
+
+# 4. Print the variable company using _print()_.
+
+print(company)
+
+# 5. Print the length of the company string using _len()_ method and _print()_.
+
+print(len(company))
+
+# 6. Change all the characters to uppercase letters using _upper()_ method.
+
+print(company.upper())
+
+# 7. Change all the characters to lowercase letters using _lower()_ method.
+
+print(company.lower())
+
+# 8. Use capitalize(), title(), swapcase() methods to format the value of the string _Coding For All_.
+
+print(company.capitalize(), company.title(), company.swapcase())
+
+"""
 9. Cut(slice) out the first word of _Coding For All_ string.
 10. Check if _Coding For All_ string contains a word Coding using the method index, find or other methods.
 11. Replace the word coding in the string 'Coding For All' to Python.

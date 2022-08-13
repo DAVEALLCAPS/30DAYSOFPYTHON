@@ -13,10 +13,11 @@
 | 05 |[LISTS](/DAY_5/LISTS.py)|
 | 06 |[TUPLES](/DAY_6/TUPLES.PY)|
 
-### IN PROGRESS
+## IN PROGRESS
 |DAY | TOPIC                   |
 |----|:-----------------------:|
 | 07 |[SETS](/DAY_7/SET.PY)|
+| 08 |[DICTIONARIES](/DAY_8/DICTIONARIES.PY)|
 | 09 |[]()|
 | 10 |[]()|
 | 11 |[]()|

@@ -47,9 +47,15 @@ del B
 ages = set(age)
 print('List length:', len(age), 'Set length:', len(ages))
 # 2. Explain the difference between the following data types: string, list, tuple and set
-
+string_ = 'SEQUENCE OF UNICODE CHARACTERS'
+list_ = ['ORDERED', 555, 1.90, 'MUTABLE']
+tuple_ = ('MULTIPLE ITEMS', 'ORDERED', 'UNCHANGEABLE') 
+set_ = {'UNORDERED', 'UNCHANGEABLE', 'NO DUPLICATES'}
 # 3. _I am a teacher and I love to inspire and teach people._ How many unique words have been used
 # in the sentence? Use the split methods and set to get the unique words.
-
+our_string = 'I am a teacher and I love to inspire and teach people.'
+our_string = our_string.strip('.').split()
+setz = set(our_string)
+print('Unique Words:', len(setz))
 
 # 🎉 CONGRATULATIONS ! 🎉

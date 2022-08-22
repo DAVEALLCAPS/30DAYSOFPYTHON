@@ -12,13 +12,16 @@
 | 04 |[STRINGS](/DAY_4/STRINGS.PY)|
 | 05 |[LISTS](/DAY_5/LISTS.py)|
 | 06 |[TUPLES](/DAY_6/TUPLES.PY)|
+| 07 |[SETS](/DAY_7/SET.PY)|
+| 08 |[DICTIONARIES](/DAY_8/DICTIONARIES.PY)|
+| 09 |[CONDITIONALS](/DAY_9/CONDITIONALS.PY)|
 
 ## IN PROGRESS
 |DAY | TOPIC                   |
 |----|:-----------------------:|
-| 07 |[SETS](/DAY_7/SET.PY)|
-| 08 |[DICTIONARIES](/DAY_8/DICTIONARIES.PY)|
-| 09 |[]()|
-| 10 |[]()|
+| 10 |[LOOPS](/DAY_10/LOOPS.PY)|
 | 11 |[]()|
 | 12 |[]()|
+| 13 |[]()|
+| 14 |[]()|
+| 15 |[]()|

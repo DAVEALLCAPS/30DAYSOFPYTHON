@@ -86,16 +86,23 @@ for number in range(101):
 # ### Exercises: Level 2
     
 # 1.  Use for loop to iterate from 0 to 100 and print the sum of all numbers.
-
-#    ```sh
 #    The sum of all numbers is 5050.
-#    ```
+total_sum = 0
+for number in range(101):
+    total_sum += number
+print(f'The sum of all numbers is {total_sum}.')
 
-# 1. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
-
-#     ```sh
+# 2. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
 #     The sum of all evens is 2550. And the sum of all odds is 2500.
-#     ```
+
+all_odds = 0
+all_evens = 0
+for number in range(101):
+    if number % 2 != 0:
+        all_odds += number
+    elif number % 2 == 0:
+        all_evens += number
+print(f'The sum of all evens is {all_evens}. And the sum of all odds is {all_odds}.')
 
 # ### Exercises: Level 3
 

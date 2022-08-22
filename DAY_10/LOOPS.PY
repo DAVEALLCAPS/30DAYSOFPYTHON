@@ -3,20 +3,42 @@
 # ### Exercises: Level 1
 
 # 1. Iterate 0 to 10 using for loop, do the same using while loop.
+for number in range(11):
+    print(number,end=" ")
+
+i = 0
+print()
+
+while i < 11:
+    print(i,end=" ")
+    i += 1
+
 # 2. Iterate 10 to 0 using for loop, do the same using while loop.
+print()
+for number in range(10,-1,-1):
+    print(number,end=" ")
+
+i = 10
+print()
+while i > -1:
+    print(i,end=" ")
+    i -= 1
 # 3. Write a loop that makes seven calls to print(), so we get on the output the following triangle:
 
-#    ```py
-#      #
-#      ##
-#      ###
-#      ####
-#      #####
-#      ######
-#      #######
-#    ```
+print()
+symb = '#'
+i = 1
+while i < 8:
+    print(symb * i)
+    i += 1
 
 # 4. Use nested loops to create the following:
+
+print()
+for x in range(8):
+    for y in range(8):
+        print(symb, end=" ")
+    print()
 
 #    ```sh
 #    # # # # # # # #
@@ -31,6 +53,9 @@
 
 # 5. Print the following pattern:
 
+print()
+for number in range(11):
+    print("{} x {} = ".format(number, number), number * number)
 #    ```sh
 #    0 x 0 = 0
 #    1 x 1 = 1
@@ -45,10 +70,19 @@
 #    10 x 10 = 100
 #    ```
 
-# 6. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using a for loop and print out the items.
+# 6. Iterate through the list, ['Python', 'Numpy','Pandas','Django', 'Flask'] using 
+# a for loop and print out the items.
+my_list = ['Python', 'Numpy','Pandas','Django', 'Flask']
+for number in my_list:
+    print(number)
 # 7. Use for loop to iterate from 0 to 100 and print only even numbers
+for number in range(101):
+    if number % 2 == 0:
+        print(number)
 # 8. Use for loop to iterate from 0 to 100 and print only odd numbers
-   
+for number in range(101):
+    if number % 2 != 0:
+        print(number)
 # ### Exercises: Level 2
     
 # 1.  Use for loop to iterate from 0 to 100 and print the sum of all numbers.

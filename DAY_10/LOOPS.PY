@@ -106,9 +106,30 @@ print(f'The sum of all evens is {all_evens}. And the sum of all odds is {all_odd
 
 # ### Exercises: Level 3
 
-# 1. Go to the data folder and use the [countries.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) file. Loop through the countries and extract all the countries containing the word _land_.
-# 1. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
-# 2. Go to the data folder and use the [countries_data.py](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file. 
+# 1. Go to the data folder and use the [COUNTRIES.PY] file. 
+# Loop through the countries and extract all the countries containing the word _land_.
+import sys
+sys.path.insert(1, r'C:\Users\david\30DAYSOFPYTHON\datafiles')
+import countries as clist
+
+our_word = 'land'
+land_list = list()
+for i in clist.countries:
+    if our_word in i:
+        land_list.append(i)
+print(land_list)
+
+# 2. This is a fruit list, ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop.
+fruit_list = ['banana', 'orange', 'mango', 'lemon']
+rev_list = list()
+for i in reversed(fruit_list):
+    rev_list.append(i)
+print(rev_list)
+
+print()
+
+# 3. Go to the data folder and use the [countries_data.py]file.
+
 #    1. What are the total number of languages in the data
 #    2. Find the ten most spoken languages from the data
 #    3. Find the 10 most populated countries in the world

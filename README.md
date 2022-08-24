@@ -15,12 +15,12 @@
 | 07 |[SETS](/DAY_7/SET.PY)|
 | 08 |[DICTIONARIES](/DAY_8/DICTIONARIES.PY)|
 | 09 |[CONDITIONALS](/DAY_9/CONDITIONALS.PY)|
+| 10 |[LOOPS](/DAY_10/LOOPS.PY)|
 
 ## IN PROGRESS
 |DAY | TOPIC                   |
 |----|:-----------------------:|
-| 10 |[LOOPS](/DAY_10/LOOPS.PY)|
-| 11 |[]()|
+| 11 |[FUNCTIONS](/DAY_11/FUNCTIONS.PY)|
 | 12 |[]()|
 | 13 |[]()|
 | 14 |[]()|

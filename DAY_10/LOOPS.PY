@@ -129,9 +129,28 @@ print(rev_list)
 print()
 
 # 3. Go to the data folder and use the [countries_data.py]file.
+import countries_data as cntrdata
+langs = []
+cntnames = []
+cntpops = []
+
+for i in cntrdata.c_d:
+    langs.extend(i['languages'])
+    cntnames.append(i['name'])
+    cntpops.append(i['population'])
+
+from collections import Counter
+c = Counter(langs)
 
 #    1. What are the total number of languages in the data
+print(len(c))
 #    2. Find the ten most spoken languages from the data
+print(c.most_common(10))
 #    3. Find the 10 most populated countries in the world
+cntpops2 = sorted(cntpops)
+cntpops2 = cntpops2[-10:]
+for i in cntpops2:
+    indy = cntpops.index(i)
+    print(cntnames[indy], end=", ")
 
 # 🎉 CONGRATULATIONS ! 🎉

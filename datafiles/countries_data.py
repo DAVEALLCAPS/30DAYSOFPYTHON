@@ -1,4 +1,4 @@
-[
+c_d = [
     {
         "name": "Afghanistan",
         "capital": "Kabul",

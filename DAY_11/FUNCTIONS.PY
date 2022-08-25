@@ -4,11 +4,57 @@
 # ### Exercises: Level 1
 
 # 1. Declare a function _add_two_numbers_. It takes two parameters and it returns a sum.
-# 2. Area of a circle is calculated as follows: area = π x r x r. Write a function that calculates _area_of_circle_.
-# 3. Write a function called add_all_nums which takes arbitrary number of arguments and sums all the arguments. Check if all the list items are number types. If not do give a reasonable feedback.
-# 4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32. Write a function which converts °C to °F, _convert_celsius_to-fahrenheit_.
-# 5. Write a function called check-season, it takes a month parameter and returns the season: Autumn, Winter, Spring or Summer.
+def add_two_numbers(x, y):
+    total = x + y
+    return total
+
+print(add_two_numbers(10, 5))
+# 2. Area of a circle is calculated as follows: area = π x r x r. 
+# Write a function that calculates _area_of_circle_.
+def area_of_circle(rad):
+    area = 3.14 * rad * rad
+    return area
+
+print(area_of_circle(13))
+# 3. Write a function called add_all_nums which takes arbitrary number 
+# of arguments and sums all the arguments. Check if all the list items 
+# are number types. If not do give a reasonable feedback.
+def add_all_nums(*nums):
+    total = 0
+    for num in nums:
+        total += num
+    return total
+
+print(add_all_nums(1,2,3,4,5))
+# 4. Temperature in °C can be converted to °F using this formula: °F = (°C x 9/5) + 32.
+# Write a function which converts °C to °F, _convert_celsius_to-fahrenheit_.
+def convert_cels_to_fahren(cels):
+    fahren = (cels * 9/5) + 32
+    return fahren
+
+print(convert_cels_to_fahren(100))
+# 5. Write a function called check-season, it takes a month parameter and returns 
+# the season: Autumn, Winter, Spring or Summer.
+def check_season(month):
+    if month in ['January', 'February', 'March']:
+        return 'Winter'
+    elif month in ['April','May','June']:
+        return 'Spring'
+    elif month in ['July','August','September']:
+        return 'Summer'
+    elif month in ['October','November','December']:
+        return 'Autumn'
+    else:
+        return 'Invalid month.'
+
+print(check_season('July'))
 # 6. Write a function called calculate_slope which return the slope of a linear equation
+def calculate_slope(c):
+    c = c.split()
+    slp = c[2].rstrip('x')
+    return slp
+
+print(calculate_slope("y = 25x + 4"))
 # 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
 # 8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
 # 9. Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).

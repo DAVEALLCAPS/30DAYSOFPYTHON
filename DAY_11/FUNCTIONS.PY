@@ -150,27 +150,80 @@ print(sum_of_even(100))
 
 # ### Exercises: Level 2
 
-# 1.  Declare a function named evens_and_odds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+# 1.  Declare a function named evens_and_odds . It takes a positive integer as parameter 
+# and it counts number of evens and odds in the number.
+def evens_and_odds(num):
+    evenstotal = 0
+    oddstotal = 0
+    for i in range(0,num+1):
+        if i % 2 != 0:
+            oddstotal += 1
+        elif i % 2 == 0:
+            evenstotal += 1
+    smth = f"Evens: {evenstotal}\nOdds: {oddstotal}"
+    return smth
 
-# ```py
-#     print(evens_and_odds(100))
-#     # The number of odds are 50.
-#     # The number of evens are 51.
-# ```
+print(evens_and_odds(100))
+# 2. Call your function factorial, it takes a whole number as a parameter 
+# and it return a factorial of the number
+def factorial(num):
+    fact = 1
+    for i in range(1,num+1):
+        fact = fact * i
+    return fact
 
-# 1. Call your function factorial, it takes a whole number as a parameter and it return a factorial of the number
-# 1. Call your function _is_empty_, it takes a parameter and it checks if it is empty or not
-# 1. Write different functions which take lists. They should calculate_mean, calculate_median, calculate_mode, calculate_range, calculate_variance, calculate_std (standard deviation).
+print(factorial(23))
+# 3. Call your function _is_empty_, it takes a parameter and it checks if 
+# it is empty or not
+def is_empty(chk):
+    if chk:
+        return False
+    else:
+        return True
+
+print(is_empty(0))
+print(is_empty(100))
+print(is_empty(""))
+print(is_empty("check"))
+# 4. Write different functions which take lists. They should calculate_mean, 
+# calculate_median, calculate_mode, calculate_range, calculate_variance, 
+# calculate_std (standard deviation).
+def calculate_mean(a_list):
+    pass
+def calculate_median(a_list):
+    pass
+def calculate_mode(a_list):
+    pass
+def calculate_range(a_list):
+    pass
+def calculate_variance(a_list):
+    pass
+def calculate_std(a_list):
+    pass
 
 # ### Exercises: Level 3
 
 # 1. Write a function called is_prime, which checks if a number is prime.
-# 1. Write a functions which checks if all items are unique in the list.
-# 1. Write a function which checks if all the items of the list are of the same data type.
-# 1. Write a function which check if provided variable is a valid python variable
-# 1. Go to the data folder and access the countries-data.py file.
+# def funct():
+    # pass
+# 2. Write a functions which checks if all items are unique in the list.
+# def funct():
+    # pass
+# 3. Write a function which checks if all the items of the list are of the same data type.
+# def funct():
+    # pass
+# 4. Write a function which check if provided variable is a valid python variable
+# def funct():
+    # pass
+# 5. Go to the data folder and access the countries-data.py file.
+# def funct():
+    # pass
 
-# - Create a function called the most_spoken_languages in the world. It should return 10 or 20 most spoken languages in the world in descending order
-# - Create a function called the most_populated_countries. It should return 10 or 20 most populated countries in descending order.
+# - Create a function called the most_spoken_languages in the world. It should 
+# return 10 or 20 most spoken languages in the world in descending order
+# def funct():
+    # pass
+# - Create a function called the most_populated_countries. It should return 10 
+# or 20 most populated countries in descending order.
 
 # 🎉 CONGRATULATIONS ! 🎉

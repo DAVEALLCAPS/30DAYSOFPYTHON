@@ -55,46 +55,98 @@ def calculate_slope(c):
     return slp
 
 print(calculate_slope("y = 25x + 4"))
-# 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
-# 8. Declare a function named print_list. It takes a list as a parameter and it prints out each element of the list.
-# 9. Declare a function named reverse_list. It takes an array as a parameter and it returns the reverse of the array (use loops).
+# 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. 
+# Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
+import cmath
 
-# ```py
-# print(reverse_list([1, 2, 3, 4, 5]))
-# # [5, 4, 3, 2, 1]
-# print(reverse_list1(["A", "B", "C"]))
-# # ["C", "B", "A"]
-# ```
+def solve_quadratic(a,b,c):
+    d = (b**2) - (4*a*c)  
+    sol1 = (-b-cmath.sqrt(d))/(2*a)
+    sol2 = (-b+cmath.sqrt(d))/(2*a)
+    print('The solutions are {0} and {1}'.format(sol1,sol2))
 
-# 10. Declare a function named capitalize_list_items. It takes a list as a parameter and it returns a capitalized list of items
-# 11. Declare a function named add_item. It takes a list and an item parameters. It returns a list with the item added at the end.
+solve_quadratic(5,10,4)
+# 8. Declare a function named print_list. It takes a list as a parameter and 
+# it prints out each element of the list.
+def print_list(a_list):
+    i = 0
+    while i < len(a_list):
+        print(i, end=',')
+        i += 1
+    else:
+        print(i)
 
-# ```py
-# food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-# print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
-# numbers = [2, 3, 7, 9];
-# print(add_item(numbers, 5))      [2, 3, 7, 9, 5]
-# ```
+ccccccc = [1,2,3,4,5,6,7,8]
+print_list(ccccccc)
+# 9. Declare a function named reverse_list. It takes an array as a parameter and 
+# it returns the reverse of the array (use loops).
+def reverse_list(list_to_reverse):
+    reversed_ = []
+    i = len(list_to_reverse) - 1
+    while i >= 0:
+        reversed_.append(list_to_reverse[i])
+        i -= 1
+    return reversed_
 
-# 12. Declare a function named remove_item. It takes a list and an item parameters. It returns a list with the item removed from it.
+print(reverse_list([1, 2, 3, 4, 5]))
+print(reverse_list(["A", "B", "C"]))
+# 10. Declare a function named capitalize_list_items. It takes a list as a 
+# parameter and it returns a capitalized list of items
+def capitalize_list_items(a_list):
+    a_list = [names.capitalize() for names in a_list]
+    return a_list
 
-# ```py
-# food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
-# print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
-# numbers = [2, 3, 7, 9];
-# print(remove_item(numbers, 3))  # [2, 7, 9]
-# ```
+print(capitalize_list_items(['john', 'jacob', 'jingleheimer']))
+# 11. Declare a function named add_item. It takes a list and an item parameters. 
+# It returns a list with the item added at the end.
+def add_item(a_list, a_item):
+    a_list.append(a_item)
+    return a_list
 
-# 13. Declare a function named sum_of_numbers. It takes a number parameter and it adds all the numbers in that range.
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
+print(add_item(food_staff, 'Meat'))     # ['Potato', 'Tomato', 'Mango', 'Milk','Meat'];
+numbers = [2, 3, 7, 9];
+print(add_item(numbers, 5))      # [2, 3, 7, 9, 5]
+# 12. Declare a function named remove_item. It takes a list and an item parameters.
+# It returns a list with the item removed from it.
+def remove_item(a_list, a_item):
+    a_list.remove(a_item)
+    return a_list
 
-# ```py
-# print(sum_of_numbers(5))  # 15
-# print(sum_all_numbers(10)) # 55
-# print(sum_all_numbers(100)) # 5050
-# ```
+food_staff = ['Potato', 'Tomato', 'Mango', 'Milk'];
+print(remove_item(food_staff, 'Mango'))  # ['Potato', 'Tomato', 'Milk'];
+numbers = [2, 3, 7, 9];
+print(remove_item(numbers, 3))  # [2, 7, 9]
+# 13. Declare a function named sum_of_numbers. It takes a number parameter and it adds 
+# all the numbers in that range.
+def sum_of_numbers(numb):
+    total = 0
+    for i in range(0,numb+1):
+        total += i
+    return total
 
-# 14. Declare a function named sum_of_odds. It takes a number parameter and it adds all the odd numbers in that range.
+print(sum_of_numbers(5))  # 15
+print(sum_of_numbers(10)) # 55
+print(sum_of_numbers(100)) # 5050
+# 14. Declare a function named sum_of_odds. It takes a number parameter and it adds 
+# all the odd numbers in that range.
+def sum_of_odds(numb):
+    total = 0
+    for i in range(0,numb+1):
+        if i % 2 != 0:
+            total += i
+    return total
+
+print(sum_of_odds(100))
 # 15. Declare a function named sum_of_even. It takes a number parameter and it adds all the even numbers in that - range.
+def sum_of_even(numb):
+    total = 0
+    for i in range(0,numb+1):
+        if i % 2 == 0:
+            total += i
+    return total
+
+print(sum_of_even(100))
 
 # ### Exercises: Level 2
 

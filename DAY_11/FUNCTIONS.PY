@@ -188,19 +188,40 @@ print(is_empty("check"))
 # 4. Write different functions which take lists. They should calculate_mean, 
 # calculate_median, calculate_mode, calculate_range, calculate_variance, 
 # calculate_std (standard deviation).
-def calculate_mean(a_list):
-    pass
-def calculate_median(a_list):
-    pass
-def calculate_mode(a_list):
-    pass
-def calculate_range(a_list):
-    pass
-def calculate_variance(a_list):
-    pass
-def calculate_std(a_list):
-    pass
+from collections import Counter
+import math
 
+def calculate_mean(a_list):
+    total = sum(a_list) / len(a_list)
+    return total
+def calculate_median(a_list):
+    n = len(a_list)
+    indx = n // 2
+    if n % 2:
+        return sorted(a_list)[indx]
+    return sum(sorted(a_list)[indx - 1:indx + 1]) / 2
+def calculate_mode(a_list):
+    c = Counter(a_list)
+    return [k for k, v in c.items() if v == c.most_common(1)[0][1]]
+def calculate_range(a_list):
+    rnge = max(a_list) - min(a_list)
+    return rnge
+def calculate_variance(a_list):
+    m = calculate_mean(a_list)
+    var_res = sum((xi - m) ** 2 for xi in a_list) / len(a_list)
+    return var_res
+def calculate_std(a_list):
+    var = calculate_variance(a_list)
+    std_dev = math.sqrt(var)
+    return std_dev
+
+our_list = [1,2,2,3,4,5,6,7,8,9,10]
+print(calculate_mean(our_list))
+print(calculate_median(our_list))
+print(calculate_mode(our_list))
+print(calculate_range(our_list))
+print(calculate_variance(our_list))
+print(calculate_std(our_list))
 # ### Exercises: Level 3
 
 # 1. Write a function called is_prime, which checks if a number is prime.

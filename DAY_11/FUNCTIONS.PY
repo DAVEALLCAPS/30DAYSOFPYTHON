@@ -58,6 +58,7 @@ print(calculate_slope("y = 25x + 4"))
 # 7. Quadratic equation is calculated as follows: ax² + bx + c = 0. 
 # Write a function which calculates solution set of a quadratic equation, _solve_quadratic_eqn_.
 import cmath
+from keyword import iskeyword
 
 def solve_quadratic(a,b,c):
     d = (b**2) - (4*a*c)  
@@ -225,25 +226,50 @@ print(calculate_std(our_list))
 # ### Exercises: Level 3
 
 # 1. Write a function called is_prime, which checks if a number is prime.
-# def funct():
-    # pass
+def is_prime(n):
+    prm = True
+    if n > 1:
+        for i in range(2, int(n/2)+1):
+            if (n % i) == 0:
+                prm = False
+            else:
+                prm = True
+    return prm
+
+print(is_prime(2), is_prime(4))
 # 2. Write a functions which checks if all items are unique in the list.
-# def funct():
-    # pass
+def is_unique(a_list):
+    flg = 0
+    flg = len(set(a_list)) == len(a_list)
+    return flg
+
+print(is_unique([1,2,3,4]), is_unique([1,1,1,2,3,4]))
 # 3. Write a function which checks if all the items of the list are of the same data type.
-# def funct():
-    # pass
+def all_type(a_list):
+    types_list = []
+    for i in a_list:
+        types_list.append(type(i))
+    if all(x == types_list[0] for x in types_list):
+        return True
+    else:
+        return False
+
+print(all_type(['a','b','c']))
+print(all_type([1,2,False,'Cats']))
 # 4. Write a function which check if provided variable is a valid python variable
-# def funct():
-    # pass
+from keyword import iskeyword
+def is_valid_var(c):
+    if c.isidentifier() and iskeyword(c) == False:
+        return True
+    else:
+        return False
+
+print(is_valid_var('_yes_or_no_'),is_valid_var('True'),is_valid_var('exampleVar'), is_valid_var('3fake'))
 # 5. Go to the data folder and access the countries-data.py file.
-# def funct():
-    # pass
 
 # - Create a function called the most_spoken_languages in the world. It should 
 # return 10 or 20 most spoken languages in the world in descending order
-# def funct():
-    # pass
+
 # - Create a function called the most_populated_countries. It should return 10 
 # or 20 most populated countries in descending order.
 

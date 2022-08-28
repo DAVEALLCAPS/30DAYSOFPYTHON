@@ -60,6 +60,7 @@ print(calculate_slope("y = 25x + 4"))
 import cmath
 from keyword import iskeyword
 
+
 def solve_quadratic(a,b,c):
     d = (b**2) - (4*a*c)  
     sol1 = (-b-cmath.sqrt(d))/(2*a)
@@ -186,11 +187,12 @@ print(is_empty(0))
 print(is_empty(100))
 print(is_empty(""))
 print(is_empty("check"))
+import math
 # 4. Write different functions which take lists. They should calculate_mean, 
 # calculate_median, calculate_mode, calculate_range, calculate_variance, 
 # calculate_std (standard deviation).
 from collections import Counter
-import math
+
 
 def calculate_mean(a_list):
     total = sum(a_list) / len(a_list)
@@ -258,6 +260,8 @@ print(all_type(['a','b','c']))
 print(all_type([1,2,False,'Cats']))
 # 4. Write a function which check if provided variable is a valid python variable
 from keyword import iskeyword
+
+
 def is_valid_var(c):
     if c.isidentifier() and iskeyword(c) == False:
         return True
@@ -266,11 +270,36 @@ def is_valid_var(c):
 
 print(is_valid_var('_yes_or_no_'),is_valid_var('True'),is_valid_var('exampleVar'), is_valid_var('3fake'))
 # 5. Go to the data folder and access the countries-data.py file.
+import sys
+sys.path.insert(1, r'C:\Users\david\30DAYSOFPYTHON\datafiles')
+import countries_data
 
 # - Create a function called the most_spoken_languages in the world. It should 
 # return 10 or 20 most spoken languages in the world in descending order
+def most_spoken_languages(a_list, num):
+    langs = []
+    for i in a_list:
+        langs.extend(i['languages'])
+    c = Counter(langs)
+    return c.most_common(num)
 
+print(most_spoken_languages(countries_data.c_d,10))
+print(most_spoken_languages(countries_data.c_d,20))
 # - Create a function called the most_populated_countries. It should return 10 
 # or 20 most populated countries in descending order.
+def most_populated_countries(a_list, num):
+    cntnames = []
+    cntpops = []
+    for i in a_list:
+        cntnames.append(i['name'])
+        cntpops.append(i['population'])
+    cntpops2 = sorted(cntpops)
+    tops = list(cntpops2[-num:])
+    for i in tops:
+        indy = cntpops.index(i)
+        print(cntnames[indy], i, end="\t")
+
+print(most_populated_countries(countries_data.c_d, 10))
+print(most_populated_countries(countries_data.c_d, 20))
 
 # 🎉 CONGRATULATIONS ! 🎉

@@ -3,6 +3,9 @@
 
 # 1. Filter only negative and zero in the list using list comprehension
 #    ```py
+from itertools import chain
+
+
 numbers = [-4, -3, -2, -1, 0, 2, 4, 6]
 numbers2 = [i for i in numbers if i <= 0]
 print(numbers2)
@@ -10,13 +13,19 @@ print(numbers2)
 # 2. Flatten the following list of lists of lists to a one dimensional list :
 
 #    ```py
-list_of_lists =[[[1, 2, 3]], [[4, 5, 6]], [[7, 8, 9]]]
+list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened_list = [item for sub_list in list_of_lists for item in sub_list]
+print(flattened_list)
 #    output
 #    [1, 2, 3, 4, 5, 6, 7, 8, 9]
 #    ```
 
 # 3. Using list comprehension create the following list of tuples:
 #    ```py
+c = 1
+numberz = [(i,c,i*c,i**2,i**3,i**4,i**5) for i in range(0,11)]
+print(numberz)
+
 #    [(0, 1, 0, 0, 0, 0, 0),
 #    (1, 1, 1, 1, 1, 1, 1),
 #    (2, 1, 2, 4, 8, 16, 32),

@@ -1,20 +1,34 @@
 
 # ## 💻 Exercises: Day 14
 
-# ```py
-# countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
-# names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
-# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# ```
+countries = ['Estonia', 'Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
+names = ['Asabeneh', 'Lidiya', 'Ermias', 'Abraham']
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # ### Exercises: Level 1
+'''
+# 1. Explain the difference between map, filter, and reduce. 
+- map takes a function and iterable
+- filter takes function that returns a boolean and an iterable
+- reduce takes a function and iterable and returns and single value
 
-# 1. Explain the difference between map, filter, and reduce.
 # 2. Explain the difference between higher order function, closure and decorator
+# - high order functions return or use other functions as params
+# - closure is a nested function that refers to a value in the enclosing func and
+#       the enclosing func returns the nested func
+# - decorators take in a function, add some functionality and return it 
+'''
 # 3. Define a call function before map, filter or reduce, see examples.
 # 4. Use for loop to print each country in the countries list.
+def print_list_1by1(lst):
+    for i in lst:
+        print(i)
+
+print_list_1by1(countries)
 # 5. Use for to print each name in the names list.
+print_list_1by1(names)
 # 6. Use for to print each number in the numbers list.
+print_list_1by1(numbers)
 
 # ### Exercises: Level 2
 

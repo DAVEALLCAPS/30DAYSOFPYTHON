@@ -23,10 +23,10 @@
 |DAY | TOPIC                   |
 |----|:-----------------------:|
 | 13 |[LIST COMPREHENSION](/DAY_13/LIST_COMPREHENSION.PY)|
-| 14 |[]()|
-| 15 |[]()|
-| 16 |[]()|
-| 17 |[]()|
+| 14 |[HIGH ORDER FUNCTIONS](/DAY_14/HIGHER_ORDER_FUNCTIONS.py)|
+| 15 |[ERROR TYPES](/DAY_15/PYTHON_ERROR_TYPES.ipynb)|
+| 16 |[DATETIME](/DAY_16/DATETIME.PY)|
+| 17 |[EXCEPTIONS](/DAY_17/EXCEPTIONS.PY)|
 | 18 |[]()|
 | 19 |[]()|
 | 20 |[]()|

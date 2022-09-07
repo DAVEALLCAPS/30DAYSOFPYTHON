@@ -41,20 +41,23 @@ new_countries2 = [numbz.upper() for row in new_countries for numbz in row]
 print(new_countries2)
 # 5. Change the following list to a list of dictionaries:
 new_countries3 = [numbz for row in new_countries for numbz in row]
-keys = ['country','city','country','city','country','city']
-
-
+countries = [[('Finland', 'Helsinki')], [('Sweden', 'Stockholm')], [('Norway', 'Oslo')]]
+keys = ['country','city']
 #    output:
 #    [{'country': 'FINLAND', 'city': 'HELSINKI'},
 #    {'country': 'SWEDEN', 'city': 'STOCKHOLM'},
 #    {'country': 'NORWAY', 'city': 'OSLO'}]
-
+n = len(new_countries3)
+new_dict = [{keys[0]: new_countries3[idx], keys[1]: new_countries3[idx+1]} for idx in range(0,n,2)]
+print(new_dict)
 # 6. Change the following list of lists to a list of concatenated strings:
-# names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
-
+names = [[('Asabeneh', 'Yetayeh')], [('David', 'Smith')], [('Donald', 'Trump')], [('Bill', 'Gates')]]
 #    output
 #    ['Asabeneh Yetaeyeh', 'David Smith', 'Donald Trump', 'Bill Gates']
-
+concatnames = [" ".join(map(str,names2[i])) for i in range(0,len(names2))]
 # 7. Write a lambda function which can solve a slope or y-intercept of linear functions.
+calculate_slope = lambda c : c.split()[2].rstrip('x')
+
+print(calculate_slope("y = 25x + 4"))
 
 # 🎉 CONGRATULATIONS ! 🎉

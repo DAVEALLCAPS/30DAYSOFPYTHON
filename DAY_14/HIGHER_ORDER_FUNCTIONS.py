@@ -77,19 +77,55 @@ def add_two_nums(x,y):
 
 total = reduce(add_two_nums, numbers)
 print(total)
-# - Use reduce to concatenate all the countries and to produce this sentence: Estonia, Finland, Sweden, Denmark, Norway, and Iceland are north European countries
+# - Use reduce to concatenate all the countries and to produce this sentence: 
+# Estonia, Finland, Sweden, Denmark, Norway, and Iceland are north European countries
+concatstring = reduce(lambda x, y: x+', '+y, countries)
+print(concatstring, 'are North European countries.')
+# - Declare a function called categorize_countries that returns a list of countries with some common pattern (you can find the 
+# [countries list](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) in this repository as countries.js
+# (eg 'land', 'ia', 'island', 'stan')).
+def categorize_countries(lst):
+    land_in,stan_in = [], []
+    for i in lst:
+        if 'land' in i:
+            land_in.append(i)
+        elif 'stan' in i:
+            stan_in.append(i)
+    return land_in, stan_in
 
-# - Declare a function called categorize_countries that returns a list of countries with some common pattern (you can find the [countries list](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries.py) in this repository as countries.js(eg 'land', 'ia', 'island', 'stan')).
+import sys
+sys.path.insert(1, r'C:\Users\david\30DAYSOFPYTHON\datafiles')
+import countries as clist
 
-# - Create a function returning a dictionary, where keys stand for starting letters of countries and values are the number of country names starting with that letter.
+print(categorize_countries(clist.countries))
+# - Create a function returning a dictionary, where keys stand for starting letters of countries and values are the number 
+# of country names starting with that letter.
+def country_dictionary(lst):
+    dict = {}
+    for i in lst:
+        if i[0] in dict:
+            dict[i[0]]+=1
+        else:
+            dict[i[0]]=1
+    return dict
 
+print(country_dictionary(clist.countries))
 # - Declare a get_first_ten_countries function - it returns a list of first ten countries from the countries.js list in the data folder.
+def get_first_ten_countries(lst):
+    return lst[:10]
 
+print(get_first_ten_countries(clist.countries))
 # - Declare a get_last_ten_countries function that returns the last ten countries in the countries list.
+def get_last_ten_countries(lst):
+    return lst[-10:]
 
+print(get_last_ten_countries(clist.countries))
 # ### Exercises: Level 3
 
-# 1. Use the countries_data.py (https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file and follow the tasks below:
+# 1. Use the countries_data.py (https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/countries-data.py) file 
+# and follow the tasks below:
+import countries_data as clist_data
+
 #    - Sort countries by name, by capital, by population
 #    - Sort out the ten most spoken languages by location.
 #    - Sort out the ten most populated countries.

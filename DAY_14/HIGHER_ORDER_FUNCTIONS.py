@@ -1,6 +1,7 @@
 
 # ## 💻 Exercises: Day 14
 
+import collections
 from functools import reduce
 
 
@@ -127,7 +128,11 @@ print(get_last_ten_countries(clist.countries))
 import countries_data as clist_data
 
 #    - Sort countries by name, by capital, by population
-#    - Sort out the ten most spoken languages by location.
-#    - Sort out the ten most populated countries.
+by_name = sorted(clist_data.c_d,key=lambda dct:dct['name'])
+by_caps = sorted(clist_data.c_d,key=lambda dct:dct['capital'])
+by_pop = sorted(clist_data.c_d,reverse=True,key=lambda dct:dct['population'])
+
+# TODO: Sort out the ten most spoken languages by location.
+# TODO: Sort out the ten most populated countries.
 
 # 🎉 CONGRATULATIONS ! 🎉

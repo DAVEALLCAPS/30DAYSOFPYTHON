@@ -25,13 +25,19 @@ print(f'distance = {whole_digis_ints[-1]} - ({whole_digis_ints[0]}) = {distance_
 # ### Exercises: Level 2
 
 # 1. Write a pattern which identifies if a string is a valid python variable
+regex_python_var = '^[A-Za-z_][A-Za-z0-9_]*'
 
-#     ```sh
-#     is_valid_variable('first_name') # True
-#     is_valid_variable('first-name') # False
-#     is_valid_variable('1first_name') # False
-#     is_valid_variable('firstname') # True
-#     ```
+def is_valid_variable(word):
+    if re.search(regex_python_var,word):
+        return True
+    else:
+        return False
+
+print(is_valid_variable('first_name')) # True
+print(is_valid_variable('first-name')) # False
+print(is_valid_variable('1first_name')) # False
+print(is_valid_variable('firstname')) # True
+
 
 # ### Exercises: Level 3
 

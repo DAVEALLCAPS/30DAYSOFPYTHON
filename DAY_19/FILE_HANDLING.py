@@ -4,10 +4,22 @@
 # ### Exercises: Level 1
 
 # 1. Write a function which count number of lines and number of words in a text. All the files are in the data the folder:
+def num_lines_words(file_name):
+    f = open(file_name,"rt")
+    data = f.read()
+    words = data.split()
+    linez = data.split('\n')
+    return f'Lines: {len(linez)} and Words: {len(words)}'
+
 #    a) Read obama_speech.txt file and count number of lines and words
+print(num_lines_words('.\\datafiles\\obama_speech.txt'))
 #    b) Read michelle_obama_speech.txt file and count number of lines and words
+print(num_lines_words('.\\datafiles\\michelle_obama_speech.txt'))
 #    c) Read donald_speech.txt file and count number of lines and words
+print(num_lines_words('.\\datafiles\\donald_speech.txt'))
 #    d) Read melina_trump_speech.txt file and count number of lines and words
+print(num_lines_words('.\\datafiles\\melina_trump_speech.txt'))
+
 # 2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
 
 #    ```py

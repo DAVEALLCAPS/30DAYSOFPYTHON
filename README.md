@@ -29,10 +29,10 @@
 |DAY | TOPIC                   |
 |----|:-----------------------:|
 | 19 |[FILE HANDLING](/DAY_19/FILE_HANDLING.py)|
-| 20 |[]()|
-| 21 |[]()|
-| 22 |[]()|
-| 23 |[]()|
+| 20 |[PACKAGE MANAGER](/DAY_20/PACKAGEMGR.py)|
+| 21 |[CLASSES & OBJECTS](/DAY_21/CLASSES_OBJECTS.py)|
+| 22 |[WEB SCRAPING](/DAY_22/WEB_SCRAPING.py)|
+| 23 |[VIRTUAL ENVIRONMENTS](/DAY_23/VIRENV.py)|
 | 23 |[]()|
 | 25 |[]()|
 | 26 |[]()|

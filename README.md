@@ -23,11 +23,11 @@
 | 15 |[ERROR TYPES](/DAY_15/PYTHON_ERROR_TYPES.ipynb)|
 | 16 |[DATETIME](/DAY_16/DATETIME.PY)|
 | 17 |[EXCEPTIONS](/DAY_17/EXCEPTIONS.PY)|
+| 18 |[REGULAR EXPRESSIONS](/DAY_18/REGEX.py)|
 
 ## IN PROGRESS
 |DAY | TOPIC                   |
 |----|:-----------------------:|
-| 18 |[REGULAR EXPRESSIONS](/DAY_18/REGEX.py)|
 | 19 |[FILE HANDLING](/DAY_19/FILE_HANDLING.py)|
 | 20 |[]()|
 | 21 |[]()|

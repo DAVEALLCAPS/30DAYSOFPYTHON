@@ -21,30 +21,25 @@ print(num_lines_words('.\\datafiles\\donald_speech.txt'))
 print(num_lines_words('.\\datafiles\\melina_trump_speech.txt'))
 
 # 2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
+import json
+import collections
 
-#    ```py
-#    # Your output should look like this
-#    print(most_spoken_languages(filename='./data/countries_data.json', 10))
-#    [(91, 'English'),
-#    (45, 'French'),
-#    (25, 'Arabic'),
-#    (24, 'Spanish'),
-#    (9, 'Russian'),
-#    (9, 'Portuguese'),
-#    (8, 'Dutch'),
-#    (7, 'German'),
-#    (5, 'Chinese'),
-#    (4, 'Swahili'),
-#    (4, 'Serbian')]
+with open('.\\datafiles\\countries_data.json', 'r', encoding='utf-8') as jz:
+    jz_dict = json.loads(jz.read())
 
-#    # Your output should look like this
-#    print(most_spoken_languages(filename='./data/countries_data.json', 3))
-#    [(91, 'English'),
-#    (45, 'French'),
-#    (25, 'Arabic')]
-#    ```
+def most_spoken_languages(fi, num):
+    all_langs = []
+    for i in fi:
+        all_langs.extend(i['languages'])
+    c = collections.Counter(all_langs).most_common(num)
+    return c
 
-# 3. Read the countries_data.json data file in data directory, create a function that creates a list of the ten most populated countries
+print(most_spoken_languages(jz_dict, 10))
+print(most_spoken_languages(jz_dict, 3))
+
+# 3. Read the countries_data.json data file in data directory, create a function that creates a 
+# list of the ten most populated countries
+
 
 #    ```py
 #    # Your output should look like this

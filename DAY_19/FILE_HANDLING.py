@@ -12,19 +12,19 @@ def num_lines_words(file_name):
     return f'Lines: {len(linez)} and Words: {len(words)}'
 
 #    a) Read obama_speech.txt file and count number of lines and words
-print(num_lines_words('.\\datafiles\\obama_speech.txt'))
+print(num_lines_words('../datafiles/obama_speech.txt'))
 #    b) Read michelle_obama_speech.txt file and count number of lines and words
-print(num_lines_words('.\\datafiles\\michelle_obama_speech.txt'))
+print(num_lines_words('../datafiles/michelle_obama_speech.txt'))
 #    c) Read donald_speech.txt file and count number of lines and words
-print(num_lines_words('.\\datafiles\\donald_speech.txt'))
+print(num_lines_words('../datafiles/donald_speech.txt'))
 #    d) Read melina_trump_speech.txt file and count number of lines and words
-print(num_lines_words('.\\datafiles\\melina_trump_speech.txt'))
+print(num_lines_words('../datafiles/melina_trump_speech.txt'))
 
 # 2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
 import json
 import collections
 
-with open('.\\datafiles\\countries_data.json', 'r', encoding='utf-8') as jz:
+with open('../datafiles/countries_data.json', 'r', encoding='utf-8') as jz:
     jz_dict = json.loads(jz.read())
 
 def most_spoken_languages(fi, num):
@@ -39,40 +39,34 @@ print(most_spoken_languages(jz_dict, 3))
 
 # 3. Read the countries_data.json data file in data directory, create a function that creates a 
 # list of the ten most populated countries
+from operator import itemgetter
 
+def m_p_c(fi,num):
+    newlist = sorted(fi, key=itemgetter('population'), reverse=True)
+    newlist = newlist[:int(num)]
+    return newlist
 
-#    ```py
-#    # Your output should look like this
-#    print(most_populated_countries(filename='./data/countries_data.json', 10))
-
-#    [
-#    {'country': 'China', 'population': 1377422166},
-#    {'country': 'India', 'population': 1295210000},
-#    {'country': 'United States of America', 'population': 323947000},
-#    {'country': 'Indonesia', 'population': 258705000},
-#    {'country': 'Brazil', 'population': 206135893},
-#    {'country': 'Pakistan', 'population': 194125062},
-#    {'country': 'Nigeria', 'population': 186988000},
-#    {'country': 'Bangladesh', 'population': 161006790},
-#    {'country': 'Russian Federation', 'population': 146599183},
-#    {'country': 'Japan', 'population': 126960000}
-#    ]
-
-#    # Your output should look like this
-
-#    print(most_populated_countries(filename='./data/countries_data.json', 3))
-#    [
-#    {'country': 'China', 'population': 1377422166},
-#    {'country': 'India', 'population': 1295210000},
-#    {'country': 'United States of America', 'population': 323947000}
-#    ]
-#    ```
+print(m_p_c(jz_dict,10))
+print(m_p_c(jz_dict,3))
 
 # ### Exercises: Level 2
 
 # 4. Extract all incoming email addresses as a list from the email_exchange_big.txt file.
-# 5. Find the most common words in the English language. Call the name of your function find_most_common_words, it will take two parameters - a string or a file and a positive integer, indicating the number of words. Your function will return an array of tuples in descending order. Check the output
+import re
+# email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+# rgx = '[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z0-9-]+'
+def extract_emails(file_name):
+    with open(file_name, 'r') as f:
+        emails = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+", f.read())
+    return set(emails), len(set(emails))
 
+print(extract_emails('../datafiles/email_exchanges_big.txt'))
+# 5. Find the most common words in the English language. Call the name of your function find_most_common_words, 
+# it will take two parameters - a string or a file and a positive integer, indicating the number of words. Your 
+# function will return an array of tuples in descending order. Check the output
+
+def find_most_common_words(fi,num):
+    pass
 # ```py
 #     # Your output should look like this
 #     print(find_most_common_words('sample.txt', 10))

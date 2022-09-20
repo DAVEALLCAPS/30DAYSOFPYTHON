@@ -53,51 +53,54 @@ print(m_p_c(jz_dict,3))
 
 # 4. Extract all incoming email addresses as a list from the email_exchange_big.txt file.
 import re
-# email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-# rgx = '[a-z0-9._%+-]+@[a-z0-9-]+\.[a-z0-9-]+'
+
+rgx = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Z|a-z]\b'
+
 def extract_emails(file_name):
     with open(file_name, 'r') as f:
-        emails = re.findall(r"[a-z0-9\.\-+_]+@[a-z0-9\.\-+_]+\.[a-z]+", f.read())
+        emails = re.findall(rgx, f.read())
+    for i in emails:
+        match = re.search(r'^[\d].', i)
+        if match:
+            emails.remove(i)
     return set(emails), len(set(emails))
 
 print(extract_emails('../datafiles/email_exchanges_big.txt'))
 # 5. Find the most common words in the English language. Call the name of your function find_most_common_words, 
 # it will take two parameters - a string or a file and a positive integer, indicating the number of words. Your 
 # function will return an array of tuples in descending order. Check the output
-
 def find_most_common_words(fi,num):
-    pass
-# ```py
-#     # Your output should look like this
-#     print(find_most_common_words('sample.txt', 10))
-#     [(10, 'the'),
-#     (8, 'be'),
-#     (6, 'to'),
-#     (6, 'of'),
-#     (5, 'and'),
-#     (4, 'a'),
-#     (4, 'in'),
-#     (3, 'that'),
-#     (2, 'have'),
-#     (2, 'I')]
-
-#     # Your output should look like this
-#     print(find_most_common_words('sample.txt', 5))
-
-#     [(10, 'the'),
-#     (8, 'be'),
-#     (6, 'to'),
-#     (6, 'of'),
-#     (5, 'and')]
-# ```
-
+    f = open(fi,"rt")
+    data = f.read()
+    wordz = data.split()
+    c = collections.Counter(wordz).most_common(num)
+    return c
 # 6. Use the function, find_most_frequent_words to find:
 #    a) The ten most frequent words used in [Obama's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/obama_speech.txt)
+print(find_most_common_words('../datafiles/obama_speech.txt',10))
 #    b) The ten most frequent words used in [Michelle's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt)
+print(find_most_common_words('../datafiles/michelle_obama_speech.txt',10))
 #    c) The ten most frequent words used in [Trump's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/donald_speech.txt)
+print(find_most_common_words('../datafiles/donald_speech.txt',10))
 #    d) The ten most frequent words used in [Melina's speech](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt)
-# 7. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
+print(find_most_common_words('../datafiles/melina_trump_speech.txt',10))
+# 7. Write a python application that checks similarity between two texts. It takes a file or a string as a parameter and it will evaluate the similarity 
+# of the two texts. For instance check the similarity between the transcripts of [Michelle's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/michelle_obama_speech.txt) 
+# and [Melina's](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/melina_trump_speech.txt) speech. You may need a couple of functions, 
+# function to clean the text(clean_text), function to remove support words(remove_support_words) and finally to check the similarity(check_text_similarity). 
+# List of [stop words](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/stop_words.py) are in the data directory
+mich = '../datafiles/michelle_obama_speech.txt'
+melin = '../datafiles/melina_trump_speech.txt'
+stops = '../datafiles/stop_words.py'
+
+def clean_text():
+    pass
+def remove_support_words():
+    pass
+def check_text_similarity():
+    pass
 # 8. Find the 10 most repeated words in the romeo_and_juliet.txt
+print(find_most_common_words('../datafiles/romeo_and_juliet.txt',10))
 # 9. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
 #    a) Count the number of lines containing python or Python
 #    b) Count the number lines containing JavaScript, javascript or Javascript

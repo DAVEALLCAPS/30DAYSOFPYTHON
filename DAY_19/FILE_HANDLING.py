@@ -102,9 +102,27 @@ def check_text_similarity():
 # 8. Find the 10 most repeated words in the romeo_and_juliet.txt
 print(find_most_common_words('../datafiles/romeo_and_juliet.txt',10))
 # 9. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
+
+import csv
+with open('../datafiles/hacker_news.csv') as c:
+    csv_reader = csv.reader(c, delimiter=',')
+    line_count = 0
+    pycount = 0
+    javascriptcount = 0
+    javacount = 0
+    for row in csv_reader:
+        if line_count == 0:
+            print(f'Column names are :{", ".join(row)}')
+            line_count += 1
+        else:
+            line_count += 1
+    print(f'Number of lines:  {line_count}')
 #    a) Count the number of lines containing python or Python
+    print(f'Number of Python: {pycount}')
 #    b) Count the number lines containing JavaScript, javascript or Javascript
+    print(f'Number of JavaScript: {javascriptcount}')
 #    c) Count the number lines containing Java and not JavaScript
+    print(f'Number of Java: {javacount}')
 
 # ### Exercises: Level 3
 

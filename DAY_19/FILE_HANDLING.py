@@ -116,6 +116,13 @@ with open('../datafiles/hacker_news.csv') as c:
             line_count += 1
         else:
             line_count += 1
+            if re.search('(python|Python)', row[1]):
+                pycount +=1
+            elif re.search('(JavaScript|javascript|Javascript)',row[1]):
+                javascriptcount += 1
+            elif re.search('(Java)',row[1]):
+                if not re.search('(JavaScript)',row[1]):
+                    javacount += 1
     print(f'Number of lines:  {line_count}')
 #    a) Count the number of lines containing python or Python
     print(f'Number of Python: {pycount}')

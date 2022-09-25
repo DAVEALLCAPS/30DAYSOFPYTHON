@@ -23,6 +23,7 @@ print(num_lines_words('../datafiles/melina_trump_speech.txt'))
 # 2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
 import json
 import collections
+from tabnanny import check
 
 with open('../datafiles/countries_data.json', 'r', encoding='utf-8') as jz:
     jz_dict = json.loads(jz.read())
@@ -93,16 +94,28 @@ mich = '../datafiles/michelle_obama_speech.txt'
 melin = '../datafiles/melina_trump_speech.txt'
 stops = '../datafiles/stop_words.py'
 
-def clean_text():
-    pass
-def remove_support_words():
-    pass
-def check_text_similarity():
-    pass
+def clean_text(fi):
+    f = open(fi,"rt")
+    data = f.read()
+    wordz = data.split()
+    return wordz
+def remove_support_words(cleaned,stopwords):
+    f = open(stopwords,"rt")
+    for i in cleaned:
+        if i in f:
+            cleaned.remove(i)
+    return cleaned
+
+def check_text_similarity(cleaned1,cleaned2):
+    return set(cleaned1) & set(cleaned2)
+
+mich2 = remove_support_words(clean_text(mich),stops)
+melin2 = remove_support_words(clean_text(melin),stops)
+print(check_text_similarity(mich2,melin2))
+print(len(check_text_similarity(mich2,melin2)), 'common words.')
 # 8. Find the 10 most repeated words in the romeo_and_juliet.txt
 print(find_most_common_words('../datafiles/romeo_and_juliet.txt',10))
 # 9. Read the [hacker news csv](https://github.com/Asabeneh/30-Days-Of-Python/blob/master/data/hacker_news.csv) file and find out:
-
 import csv
 with open('../datafiles/hacker_news.csv') as c:
     csv_reader = csv.reader(c, delimiter=',')

@@ -23,7 +23,7 @@ print(num_lines_words('../datafiles/melina_trump_speech.txt'))
 # 2. Read the countries_data.json data file in data directory, create a function that finds the ten most spoken languages
 import json
 import collections
-from tabnanny import check
+
 
 with open('../datafiles/countries_data.json', 'r', encoding='utf-8') as jz:
     jz_dict = json.loads(jz.read())

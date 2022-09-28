@@ -33,8 +33,8 @@
 |----|:-----------------------:|
 | 21 |[CLASSES & OBJECTS](/DAY_21/CLASSES_OBJECTS.py)|
 | 22 |[WEB SCRAPING](/DAY_22/WEB_SCRAPING.py)|
-| 23 |[]()|
-| 25 |[]()|
+| 24 |[STATISTICS](/DAY_24/DAY_24STATISTICS.ipynb)|
+| 25 |[PANDAS](/DAY_25/PANDAS_25.py)|
 | 26 |[]()|
 | 27 |[]()|
 | 28 |[]()|

@@ -72,7 +72,10 @@ from bs4 import BeautifulSoup
 responses = requests.get(UCI)
 soup = BeautifulSoup(responses.text,"html.parser")
 
-z = soup.find_all('p',class_='normal')
-
+lists = []
+zz = soup.find('table',attrs={"border":"1","cellpadding":"5"})
+for tag in zz.find_all('tr'):
+    for td in tag.find_all('td'):
+        lists.append(td.text)
 
 # 🎉 CONGRATULATIONS ! 🎉

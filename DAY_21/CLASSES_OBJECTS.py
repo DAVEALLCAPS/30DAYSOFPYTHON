@@ -9,18 +9,64 @@
 # In addition to those measures, find the min, max, count, percentile, and frequency distribution of the sample. 
 # You can create a class called Statistics and create all the functions that do statistical calculations as 
 # methods for the Statistics class. Check the output below.
+from collections import Counter
+
+
 class Statistics:
     def __init__(self, data):
         self.data = data
 
     def count(self):
         return len(self.data)
+
+    def sum(self):
+        return sum(self.data)
         
+    def min(self):
+        return min(self.data)
+
+    def max(self):
+        return max(self.data)
+
+    def range(self):
+        return max(self.data) - min(self.data)
+    
+    def mean(self):
+        return sum(self.data) / len(self.data)
+    
+    def median(self):
+        data = sorted(self.data)
+        n = len(data)
+        if n == 0:
+            pass
+        if n % 2 == 1:
+            return data[n // 2]
+        else:
+            i = n // 2
+            return (data[i - 1] + data[i]) / 2
+    
+    def mode(self):
+        pairs = Counter(iter(self.data)).most_common(1)
+        try:
+            return pairs[0][0]
+        except IndexError:
+            raise ValueError('no mode for empty data') from None
+
+
 ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
 p = Statistics(ages)
 print(p.data)
-print(p.count())
-print(p)
+print('Count: ', p.count())
+print('Sum: ',p.sum())
+print('Min: ',p.min())
+print('Max: ',p.max())
+print('Range: ',p.range())
+print('Mean: ',p.mean())
+print('Median: ',p.median())
+print('Mode: ',p.mode())
+print('STD : ',)
+print('Variance: ',)
+print('Freq. Dist.: ',)
 
 # print('Count:', data.count()) # 25
 # print('Sum: ', data.sum()) # 744
@@ -53,8 +99,55 @@ print(p)
 
 # ### Exercises: Level 2
 
-# 1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it has total_income, total_expense, account_info, add_income, add_expense and account_balance methods. Incomes is a set of incomes and its description. The same goes for expenses.
+# 1. Create a class called PersonAccount. It has firstname, lastname, incomes, expenses properties and it 
+# has total_income, total_expense, account_info, add_income, add_expense and account_balance methods. 
+# Incomes is a set of incomes and its description. The same goes for expenses.
 
+class PersonAccount:
+    def __init__(self, firstname, lastname, income, expense):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.income = income
+        self.expense = expense
+
+    def total_income(self):
+        return self.income
+
+    def total_expense(self):
+        return self.expense
+
+    def account_info(self):
+        return f'The name of the person is {self.firstname} {self.lastname}. Total expenses is {self.expense} and the total income is {self.income}. Account balance is {self.income - self.expense}.  '  
+
+    def add_income(self):
+        new_income = int(input("Enter the amount of income: "))
+        self.income =  self.income + new_income
+        return self.income 
+
+    def add_expense(self):
+        new_expense = int(input("Enter the amount of expense: "))
+        self.expense = self.expense + new_expense
+        return self.expense    
+
+    def acc_bal(self):
+        return self.income - self.expense
+
+fname = input("Enter the first name: ")
+lname = input("Enter the last name: ")
+inc = int(input("Enter the income: "))
+exp = int(input("Enter the expenses: "))
+
+PA1 = PersonAccount(fname, lname, inc, exp)
+print(PA1.firstname)        
+print(PA1.lastname)        
+print(PA1.income)        
+print(PA1.expense) 
+print((PA1.total_expense()))       
+print((PA1.total_income()))       
+print((PA1.acc_bal()))       
+print((PA1.add_expense()))       
+print((PA1.add_income()))       
+print((PA1.account_info())) 
 # ### Exercises: Level 3
 
 

@@ -36,7 +36,7 @@
 ## IN PROGRESS
 |DAY | TOPIC                   |
 |----|:-----------------------:|
-| 27 |[]()|
-| 28 |[]()|
-| 29 |[]()|
-| 30 |[]()|
+| 27 |[MONGO DB](/DAY_27/PYMONGO.md)|
+| 28 |[API](/DAY_28/APIPY.md)|
+| 29 |[BUILD AN API](/DAY_29/APIBUILD.md)|
+| 30 |[CONCLUSIONS](/DAY_30/CONCLUSIONS.md)|

@@ -32,6 +32,8 @@ tables = soup.find_all('table', {'cellpadding':'3'})
 table = tables[0] # the result is a list, we are taking out data from it
 for td in table.find('tr').find_all('td'):
     print(td.text)
+
+#TODO: Finish scraping tables.
 # 2. Scrape the presidents table and store the data as json(https://en.wikipedia.org/wiki/List_of_presidents_of_the_United_States). The table is not very structured and the scrapping may take very long time.
 
 # 🎉 CONGRATULATIONS ! 🎉

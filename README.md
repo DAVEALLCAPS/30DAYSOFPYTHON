@@ -32,11 +32,11 @@
 | 24 |[STATISTICS](/DAY_24/DAY_24STATISTICS.ipynb)|
 | 25 |[PANDAS](/DAY_25/PANDAS_25.py)|
 | 26 |[PYTHON FOR WEB](/DAY_26/PYTHONWEB.py)|
+| 27 |[MONGO DB](/DAY_27/PYMONGO.md)|
 | 28 |[API](/DAY_28/APIPY.md)|
 
 ## IN PROGRESS
 |DAY | TOPIC                   |
 |----|:-----------------------:|
-| 27 |[MONGO DB](/DAY_27/PYMONGO.md)|
 | 29 |[BUILD AN API](/DAY_29/APIBUILD.md)|
 | 30 |[CONCLUSIONS](/DAY_30/CONCLUSIONS.md)|
